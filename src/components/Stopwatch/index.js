@@ -15,7 +15,7 @@ class Stopwatch extends Component {
 
   onResetTimer = () => {
     clearInterval(this.timeInterval)
-    this.setState({isTimerRunning: false, timeElapsedInSeconds: 0})
+    this.setState({isTimerRunning: false, timeElapsedInSeconds: 0}) // 3
   }
 
   onStopTimer = () => {
@@ -25,7 +25,7 @@ class Stopwatch extends Component {
 
   updateTime = () => {
     this.setState(prevState => ({
-      timeElapsedInSeconds: prevState.timeElapsedInSeconds + 1,
+      timeElapsedInSeconds: prevState.timeElapsedInSeconds + 1, // 4
     }))
   }
 
@@ -56,7 +56,7 @@ class Stopwatch extends Component {
 
   render() {
     const {isTimerRunning} = this.state
-    const time = `${this.renderMinutes()}:${this.renderSeconds()}`
+    const time = `${this.renderMinutes()}:${this.renderSeconds()}` // 5 and 6
 
     return (
       <div className="app-container">
